@@ -1,0 +1,57 @@
+.gradient-text1 {
+    background-image: linear-gradient(90deg,
+            #FF96B2 8%,
+            #D7A9E5 45%,
+            #7AA9FF 81%,
+            #8BD7E1 98%);
+}
+
+.gradient-text2 {
+    background-image: linear-gradient(90deg,
+            #7AA9FF 6%,
+            #D7A9E5 20%,
+            #FF96B2 28%,
+            #FFB481 47%,
+            #FFD146 60%,
+            #95E4A2 79%,
+            #8BD7E1 95%);
+}
+
+/* Primer Custom Shape Divider */
+.custom-shape-divider-top-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1 svg {
+    position: relative;
+    display: block;
+    height: 259px;
+}
+
+.custom-shape-divider-top-1 .shape-fill {
+    fill: transparent;
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1 svg {
+        width: calc(100% + 1.3px);
+        height: 172px;
+    }
+}
+
+/* Cuarta sección */
+
+/* Quinta sección */
+
+.gradient-button1 {
+    background-image: linear-gradient(75deg,
+            #FFD146 16%,
+            #FC589A 45%,
+            #7AA9FF 82%);
+}

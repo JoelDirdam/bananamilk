@@ -1,0 +1,9 @@
+.gradient-text1 {
+    background-image: linear-gradient(90deg,
+            #95E4A2 5%,
+            #7AA9FF 24%,
+            #D7A9E5 43%,
+            #FFB481 47%,
+            #FF96B2 69%,
+            #FFB481 93%);
+}

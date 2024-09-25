@@ -1,0 +1,57 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+  font-family: 'quicksand';
+  src: url('/src/assets/fonts/Quicksand-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sanggar';
+  src: url('/src/assets/fonts/sanggar.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Winkle';
+  src: url('/src/assets/fonts/Winkle-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'quicksand', sans-serif;
+}
+
+.gradient-bar {
+  background: linear-gradient(90deg, 
+    #FF9696 0%, 
+    #FFB481 16%, 
+    #FFD146 21%, 
+    #FFE6AE 25%, 
+    #CCE8CF 29%, 
+    #95E4A2 34%, 
+    #8BD7E1 38%, 
+    #7AA9FF 47%, 
+    #D7A9E5 62%, 
+    #FFAFE3 75%, 
+    #FF96B2 91%, 
+    #FFB8CB 100%
+  );
+}
+
+/* Cambia el color de fondo y del texto al seleccionar texto */
+::selection {
+  background-color: #FFB8CB; /* Color de fondo personalizado */
+  color: #FFFFFF; /* Texto en blanco */
+}
+
+/* Para navegadores WebKit (como Safari y Chrome) */
+::-moz-selection {
+  background-color: #FFB8CB; /* Color de fondo personalizado */
+  color: #FFFFFF; /* Texto en blanco */
+}
