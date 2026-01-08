@@ -1,0 +1,357 @@
+/* ==================================
+   BANANAMILK RESPONSIVE STYLES
+   Scoped styles for BananaMilk ecommerce app
+   ================================== */
+
+/* CSS Variables for Consistent Theming */
+:root {
+    /* Colors - matching existing palette */
+    --bm-pink-primary: #ff96b2;
+    --bm-pink-light: #ffb8cb;
+    --bm-pink-lighter: #ffdee7;
+    --bm-pink-accent: #ffafe3;
+    --bm-pink-dark: #fc589a;
+    --bm-purple: #d7a9e5;
+    --bm-purple-dark: #b382d9;
+    --bm-blue: #7aa9ff;
+    --bm-blue-light: #8bd7e1;
+    --bm-green: #95e4a2;
+    --bm-yellow: #ffd146;
+    --bm-orange: #ffb481;
+    --bm-peach: #faf6ef;
+    --bm-white: #ffffff;
+
+    /* Typography Scale - Fluid with clamp() */
+    --bm-text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --bm-text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --bm-text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --bm-text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+    --bm-text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --bm-text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --bm-text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+    --bm-text-4xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+    --bm-text-5xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+    --bm-text-6xl: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+    --bm-text-7xl: clamp(3rem, 2rem + 5vw, 4.5rem);
+
+    /* Spacing */
+    --bm-spacing-xs: 0.5rem;
+    --bm-spacing-sm: 1rem;
+    --bm-spacing-md: 1.5rem;
+    --bm-spacing-lg: 2rem;
+    --bm-spacing-xl: 3rem;
+    --bm-spacing-2xl: 4rem;
+
+    /* Container */
+    --bm-container-max: 1280px;
+    --bm-container-padding: clamp(1rem, 2vw, 2rem);
+
+    /* Border Radius */
+    --bm-radius-sm: 0.5rem;
+    --bm-radius-md: 1rem;
+    --bm-radius-lg: 1.25rem;
+    --bm-radius-full: 9999px;
+
+    /* Shadows */
+    --bm-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --bm-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --bm-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* ==================================
+   GRADIENT TEXT UTILITIES
+   ================================== */
+.gradient-text1 {
+    background-image: linear-gradient(90deg, #ff96b2 8%, #d7a9e5 45%, #7aa9ff 81%, #8bd7e1 98%);
+}
+
+.gradient-text2 {
+    background-image: linear-gradient(90deg,
+            #7aa9ff 6%,
+            #d7a9e5 20%,
+            #ff96b2 28%,
+            #ffb481 47%,
+            #ffd146 60%,
+            #95e4a2 79%,
+            #8bd7e1 95%);
+}
+
+.gradient-button1 {
+    background-image: linear-gradient(75deg, #ffd146 16%, #fc589a 45%, #7aa9ff 82%);
+}
+
+/* ==================================
+   SVG CURVE DIVIDERS - RESPONSIVE
+   ================================== */
+.custom-shape-divider-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+
+/* Tablet adjustments */
+@media (min-width: 640px) {
+    .custom-shape-divider-top svg {
+        height: 200px;
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) {
+    .custom-shape-divider-top svg {
+        height: 259px;
+    }
+}
+
+.custom-shape-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+@media (min-width: 640px) {
+    .custom-shape-divider-bottom svg {
+        height: 100px;
+    }
+}
+
+/* ==================================
+   TEXT STROKE EFFECTS - UTILITY
+   ================================== */
+.text-stroke-white {
+    -webkit-text-stroke: 18px #ffffff;
+    paint-order: stroke fill;
+    stroke-linecap: round;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+}
+
+.text-stroke-pink {
+    -webkit-text-stroke: 18px #ff96b2;
+    paint-order: stroke fill;
+    stroke-linecap: round;
+    text-shadow: 0 0 5px #ff96b2, 0 0 10px #ff96b2, 0 0 15px #ff96b2;
+}
+
+.text-stroke-white-sm {
+    -webkit-text-stroke: 12px #ffffff;
+    paint-order: stroke fill;
+    stroke-linecap: round;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+}
+
+/* Responsive stroke widths */
+@media (max-width: 639px) {
+    .text-stroke-white {
+        -webkit-text-stroke: 8px #ffffff;
+    }
+
+    .text-stroke-pink {
+        -webkit-text-stroke: 8px #ff96b2;
+    }
+
+    .text-stroke-white-sm {
+        -webkit-text-stroke: 6px #ffffff;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+    .text-stroke-white {
+        -webkit-text-stroke: 12px #ffffff;
+    }
+
+    .text-stroke-pink {
+        -webkit-text-stroke: 12px #ff96b2;
+    }
+
+    .text-stroke-white-sm {
+        -webkit-text-stroke: 8px #ffffff;
+    }
+}
+
+/* ==================================
+   HOVER UNDERLINE ANIMATION
+   ================================== */
+.hover-underline-animation {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #fc589a;
+    transition: width 0.3s ease-in-out;
+}
+
+.hover-underline-animation:hover::after {
+    width: 100%;
+}
+
+/* ==================================
+   WAVES ANIMATION
+   ================================== */
+@keyframes waves {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-waves {
+    animation: waves 20s linear infinite;
+}
+
+/* ==================================
+   RESPONSIVE CONTAINER
+   ================================== */
+.bm-container {
+    width: 100%;
+    max-width: var(--bm-container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--bm-container-padding);
+    padding-right: var(--bm-container-padding);
+}
+
+/* ==================================
+   PRODUCT GRID - RESPONSIVE
+   ================================== */
+.bm-product-grid {
+    display: grid;
+    gap: var(--bm-spacing-lg);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .bm-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--bm-spacing-xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .bm-product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .bm-product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ==================================
+   MOBILE MENU STYLES
+   ================================== */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    max-width: 320px;
+    background-color: var(--bm-white);
+    z-index: 50;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: -4px 0 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* ==================================
+   UTILITY CLASSES
+   ================================== */
+.bm-section {
+    padding-top: clamp(3rem, 8vw, 6rem);
+    padding-bottom: clamp(3rem, 8vw, 6rem);
+}
+
+.bm-section-sm {
+    padding-top: clamp(2rem, 5vw, 4rem);
+    padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+/* Fluid spacing utilities */
+.bm-gap-fluid {
+    gap: clamp(1rem, 2vw, 2.5rem);
+}
+
+.bm-gap-fluid-sm {
+    gap: clamp(0.5rem, 1vw, 1rem);
+}
+
+/* Responsive image containers */
+.bm-img-responsive {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Hide on mobile, show on desktop */
+.hide-mobile {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .hide-mobile {
+        display: block;
+    }
+}
+
+/* Hide on desktop, show on mobile */
+.hide-desktop {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .hide-desktop {
+        display: none;
+    }
+}
