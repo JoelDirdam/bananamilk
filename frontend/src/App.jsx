@@ -4,21 +4,69 @@ import Navbar from './components/layout/Navbar'
 import Home from './components/Home/Home'
 import Footer from './components/layout/Footer'
 import Shop from './components/Shop/Shop'
+import Login from './components/auth/Login'
+import AdminDashboard from './components/admin/AdminDashboard'
+import ProtectedRoute from './components/auth/ProtectedRoute'
+
 const App = () => {
   return (
     <Router>
-      <Navbar/>
-
-      {/* Rutas */}
       <Routes>
-        <Route path="*" element={<Home/>}/>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/shop" element={<Shop/>}/>
-        {/* <Route path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>}/> */}
-      </Routes>
+        {/* Ruta de login (sin Navbar/Footer) */}
+        <Route path="/login" element={<Login />} />
+        
+        {/* Rutas protegidas de admin (sin Navbar/Footer) */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/*"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
 
-      <Footer/>
+        {/* Rutas públicas con layout completo */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Home />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/shop"
+          element={
+            <>
+              <Navbar />
+              <Shop />
+              <Footer />
+            </>
+          }
+        />
+        
+        {/* Catch all - redirigir a Home */}
+        <Route
+          path="*"
+          element={
+            <>
+              <Navbar />
+              <Home />
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
     </Router>
   )
 }
